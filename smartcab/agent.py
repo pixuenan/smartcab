@@ -32,8 +32,8 @@ class LearningAgent(Agent):
 
         # Select the destination as the new location to route to
         self.planner.route_to(destination)
-        
-        ########### 
+
+        ###########
         ## TO DO ##
         ###########
         # Update epsilon using a decay function of your choice
@@ -101,6 +101,8 @@ class LearningAgent(Agent):
         ## TO DO ##
         ###########
         # When not learning, choose a random action
+        if not self.learning:
+            action = random.choice(self.valid_actions)
         # When learning, choose a random action with 'epsilon' probability
         #   Otherwise, choose an action with the highest Q-value for the current state
  
